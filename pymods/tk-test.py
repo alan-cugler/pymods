@@ -1,5 +1,5 @@
-from tkinter import *
-from tkinter import ttk
+from tkinter import * #actual tkinter library
+from tkinter import ttk #newer themesed widget
 
 def calculate(*args):
 	try:
