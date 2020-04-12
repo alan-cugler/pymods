@@ -1,0 +1,16 @@
+# Configuration Settings for pymods
+
+# Absolute path to your games data directory
+data_path:'/home/alan-cugler/steam/steam/steamapps/common/Skyrim\ Special\ Edition/Data/'
+
+# Absolute path to the `Plugins.txt` file
+plugin_path:'/home/alan-cugler/steam/steam/steamapps/compatdata/489830/pfx/drive_c/users/steamuser/Local\ Settings/Application\ Data/Skyrim\ Special\ Edition/Plugins.txt'
+
+# Absolute path to the modded game profiles directory
+profile_path:'/home/alan-cugler/Downloads/skyrim_mods/profiles/'
+
+# Absolute path to the downloaded mods directory
+mod_path:'/home/alan-cugler/Downloads/skyrim_mods/compressed_mods/'
+
+# Abosulte path to the uncompessed mods directory
+catelog_path:'/home/alan-cugler/Downloads/skyrim_mods/catalog/'
