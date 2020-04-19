@@ -15,3 +15,10 @@ mod_path = Path('/home/alan-cugler/Downloads/skyrim_mods/compressed_mods/')
 
 # Abosulte path to the uncompessed mods directory
 catelog_path = Path('/home/alan-cugler/Downloads/skyrim_mods/catalog/')
+
+# my API key for my Nexus account
+account_api_key = |
+d0poR245K05tUWRiZXBPbHNGNHllaDhnR3pKdnpYaFNLc0ZocyszMnV2a2dZbGxSSHVCZHRNS2YySVVxQ0VMYi0tUXoxUHp4cnVTd2hvVkhOUW5aaUpEZz09--7fe4ffde12d81fcc03ea8a6b9aa5d47e9d8244ae
+
+# Nexus website API
+https://app.swaggerhub.com/apis-docs/NexusMods/nexus-mods_public_api_params_in_form_data/1.0#/

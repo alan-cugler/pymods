@@ -22,7 +22,9 @@ def create_mod_list(mod_root_path):
 
 
 def simplify_mod_dir(mod_root_path, mod_dir):
-    new_mod_dir = mod_dir + '_test'
+    new_mod_dir = mod_dir + '_simplified'
+    #new_mod_dir = new_mod_name(mod_dir)
+
     full_path_mod = mod_root_path / new_mod_dir
     full_path_mod.mkdir(exist_ok=True)
 
@@ -35,5 +37,8 @@ def simplify_mod_dir(mod_root_path, mod_dir):
             skse_plug_dir.mkdir(exist_ok=True)
 
 
-def catalog_creation():
+def migrate_mod_files(mod_root_path, mod_dir):
+    full_path_mod = mod_root_path / mod_dir
 
+    mod_dir_and_files = full_mod_path.rglob('*.*')
+    mod_files = [i for i in mod_dir_and_files if i.is_file()]
