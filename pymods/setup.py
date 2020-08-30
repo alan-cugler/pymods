@@ -7,6 +7,8 @@ setup(name='pymods',
       author='Alan Cugler',
       author_email='alan.cugler101@gmail.com',
       license='GPL',
-      packages=[''],
+      packages=[
+        'tkinter',
+        'platform',
+        'patool'],
       zip_safe=False)
-
