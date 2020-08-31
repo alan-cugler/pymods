@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
 import tkinter as tk
+from tkinter import ttk
+import tkinter.font as tkFont
 import platform
 
 root = tk.Tk()
 root.title('PyMods Manager')
 root.resizable(height=True, width=True) # False locks the Window
-
 
 system = platform.system()
 if system == 'Windows':
@@ -17,10 +18,12 @@ elif system == '':
     expectation = "Expected: 'Linux' 'Windows' or 'Darwin', Received: "
     raise OSError(expectation + system)
 
+# Global font size and style
+globalfont = tkFont.Font(family='Helvetica', size=10)
 
+# Used for row=0 frames
 topframe = tk.Frame(root)
 topframe.pack(side='top', fill='x')
-
 
 ##################
 # Top Left Frame #
@@ -40,7 +43,8 @@ for button in top_left:
 topmiddleframe = tk.Frame(topframe)
 topmiddleframe.grid(column=8, columnspan=10, row=0)
 topmiddleframe.grid(ipady=10, ipadx=10, padx=2, pady=3)
-root.grid_columnconfigure(8, weight=1)
+topframe.grid_columnconfigure(8, weight=1)
+
 
 ###################
 # Top Right Frame #
@@ -57,42 +61,32 @@ for button in top_right:
     count += 1
 
 
+###############
+# Border line #
+###############
 lineframe=tk.Frame(root)
 lineframe.pack(side='top',fill='x')
 linecanvas = tk.Canvas(lineframe, height=2, background='#8D9888')
-linecanvas.pack(fill='x', expand=1)
+linecanvas.pack(fill='x', expand=1, pady=3)
 
 
 ##############
 # Main Frame #
 ##############
-#topline = tk.Canvas(root, background='white')
-#topline.pack(expand=True, fill='x')
+midframe = tk.Frame(root)
+midframe.pack(side='top', fill='x')
 
-#mainframe = tk.Frame(root)
-#mainframe.grid(column=0, row=2, columnspan=21)
-#root.grid_rowconfigure(1, weight=10)
-#root.grid_rowconfigure(1, weight=1)
+mainframe = tk.Frame(midframe)
+mainframe.grid(column=0, row=2, columnspan=21, padx=6)
 
-#topline.create_line(1000,1000,100,100)
-#topline.grid(column=0, row=1)
+profilelabel = tk.Label(mainframe, text='Profile', font=globalfont)
+profilelabel.grid(column=0, row=2, columnspan=2, sticky="W")
+profilelabel.grid(ipady=10, ipadx=6)
 
-#plabel = tk.Label(mainframe, text='profile')
-#plabel.grid(column=0, row=2, columnspan=2, sticky="W")
-
-#poption = tk.StringVar()
-#poption.set('default')
-#pmenu = tk.OptionMenu(mainframe, poption,'default')
-#pmenu.grid(column=2, row=2, columnspan=6)
-
-#e1label = tk.Label(mainframe, text='')
-#e1label.grid(column=9, row=2)
-#e1label.grid_columnconfigure(10, minsize=30)
-
-#i1option = tk.StringVar()
-#i1option.set('image')
-#i1menu = tk.OptionMenu(mainframe, i1option,'image')
-#i1menu.grid(column=10, row=2)
+menued = tk.StringVar()
+menued.set('Default')
+profilemenu = ttk.Combobox(mainframe, textvariable=menued, values='Default')
+profilemenu.grid(column=2, row=2, columnspan=6, ipadx=125, ipady=3)
 
 
 root.mainloop()
